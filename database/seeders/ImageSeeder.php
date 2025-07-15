@@ -45,6 +45,33 @@ class ImageSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'name' => 'Ảnh Công nghệ 2',
+                'slug' => 'anh-cong-nghe-2',
+                'image' => 'assets/img/anh/sp3.jpg',
+                'description' => 'Ảnh chủ đề công nghệ.',
+                'tag_id' => 4,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Ảnh Công nghệ 3',
+                'slug' => 'anh-cong-nghe-3',
+                'image' => 'assets/img/anh/sp2.jpg',
+                'description' => 'Ảnh chủ đề công nghệ.',
+                'tag_id' => 4,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Ảnh Công nghệ 4',
+                'slug' => 'anh-cong-nghe-4',
+                'image' => 'assets/img/anh/sp1.jpg',
+                'description' => 'Ảnh chủ đề công nghệ.',
+                'tag_id' => 4,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 } 

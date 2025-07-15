@@ -2,6 +2,8 @@
 @section('title', "Trang chủ")
 @section('contents')
     <main class="main">
+
+
         <!-- Hero Section -->
         <section id="hero" class="hero section">
             <div class="container">
@@ -10,10 +12,12 @@
                         <div class="content">
                             <div class="agency-name">
                                 <h5>OUR AGENCY</h5>
+
+
                             </div>
 
                             <div class="main-heading">
-                                <h1>CREATIVE <br>DESIGN</h1>
+                                <h1>PHONG <br>CÁCH</h1>
                             </div>
 
                             <div class="divider"></div>
@@ -42,10 +46,10 @@
 
                             <div class="stats-card">
                                 <div class="stats-number">
-                                    <h2>5K</h2>
+                                    <h2>KK</h2>
                                 </div>
                                 <div class="stats-label">
-                                    <p>Successful Campaigns</p>
+                                    <p>Nhiều ảnh đẹp lém</p>
                                 </div>
                                 <div class="stats-arrow">
                                     <a href="#portfolio"><i class="bi bi-arrow-up-right"></i></a>
@@ -56,7 +60,70 @@
                 </div>
             </div>
         </section><!-- /Hero Section -->
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio section">
 
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Ảnh</h2>
+                <div><span>Ở đây</span> <span class="description-title">chỉ có ảnh</span></div>
+            </div><!-- End Section Title -->
+
+            <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+                    <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+                        <li data-filter="*" class="filter-active">
+                            <i class="bi bi-grid-3x3"></i> Tất cả ảnh
+                        </li>
+
+                        @foreach ($tags as $tag)
+                            <li data-filter=".{{ $tag->slug }}">
+                                {{ $tag->name }}
+                            </li>
+                        @endforeach
+
+                    </ul>
+
+                    <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+
+                        @foreach ($images as $image)
+                            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item {{ $image->tag->slug }}">
+                                <article class="portfolio-entry">
+                                    <figure class="entry-image">
+                                        <img src="{{ $image->image }}" class="img-fluid" alt="" loading="lazy">
+                                        <div class="entry-overlay">
+                                            <div class="overlay-content">
+                                                <div class="entry-meta">{{ $image->tag->name }}</div>
+                                                <h3 class="entry-title">{{ $image->name }}</h3>
+                                                <div class="entry-links">
+                                                    <a href="">
+                                                        <i class="bi bi-heart"></i>
+                                                    </a>
+                                                    <a href="{{ $image->image }}" class="glightbox"
+                                                        data-gallery="portfolio-gallery-marketing"
+                                                        data-glightbox="title: Brand Strategy; description: Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.">
+                                                        <i class="bi bi-arrows-angle-expand"></i>
+                                                    </a>
+                                                    <a href="{{ route("image.detail", $image->slug) }}">
+                                                        <i class="bi bi-arrow-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </article>
+                            </div>
+                        @endforeach
+
+                    </div><!-- End Portfolio Container -->
+
+                </div>
+
+            </div>
+
+        </section><!-- /Portfolio Section -->
         <!-- About Section -->
         <section id="about" class="about section">
 
@@ -129,25 +196,25 @@
                         <div class="col-lg-8" data-aos="fade-left" data-aos-delay="300">
                             <div class="testimonial-slider swiper init-swiper">
                                 <script type="application/json" class="swiper-config">
-                      {
-                        "loop": true,
-                        "speed": 800,
-                        "autoplay": {
-                          "delay": 5000
-                        },
-                        "slidesPerView": 1,
-                        "spaceBetween": 30,
-                        "navigation": {
-                          "nextEl": ".slider-next",
-                          "prevEl": ".slider-prev"
-                        },
-                        "breakpoints": {
-                          "768": {
-                            "slidesPerView": 2
+                          {
+                            "loop": true,
+                            "speed": 800,
+                            "autoplay": {
+                              "delay": 5000
+                            },
+                            "slidesPerView": 1,
+                            "spaceBetween": 30,
+                            "navigation": {
+                              "nextEl": ".slider-next",
+                              "prevEl": ".slider-prev"
+                            },
+                            "breakpoints": {
+                              "768": {
+                                "slidesPerView": 2
+                              }
+                            }
                           }
-                        }
-                      }
-                    </script>
+                        </script>
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="testimonial-item">
@@ -414,7 +481,7 @@
 
         </section><!-- /Services Section -->
 
-        
+
         <!-- Call To Action Section -->
         <section id="call-to-action" class="call-to-action section">
 
@@ -487,19 +554,19 @@
 
                 <div class="testimonials-slider swiper init-swiper">
                     <script type="application/json" class="swiper-config">
-                {
-                  "slidesPerView": 1,
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "navigation": {
-                    "nextEl": ".swiper-button-next",
-                    "prevEl": ".swiper-button-prev"
-                  }
-                }
-              </script>
+                    {
+                      "slidesPerView": 1,
+                      "loop": true,
+                      "speed": 600,
+                      "autoplay": {
+                        "delay": 5000
+                      },
+                      "navigation": {
+                        "nextEl": ".swiper-button-next",
+                        "prevEl": ".swiper-button-prev"
+                      }
+                    }
+                  </script>
 
                     <div class="swiper-wrapper">
 
@@ -649,69 +716,7 @@
 
         </section><!-- /Testimonials Section -->
 
-       <!-- Portfolio Section -->
-<section id="portfolio" class="portfolio section">
 
-<!-- Section Title -->
-<div class="container section-title" data-aos="fade-up">
-    <h2>Portfolio</h2>
-    <div><span>Check Our</span> <span class="description-title">Portfolio</span></div>
-</div><!-- End Section Title -->
-
-<div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
-
-    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
-            <li data-filter="*" class="filter-active">
-                <i class="bi bi-grid-3x3"></i> Tất cả ảnh
-            </li>
-
-            @foreach ($tags as $tag)
-             <li data-filter=".{{ $tag->slug }}">
-                {{ $tag->name }}
-            </li>
-            @endforeach
-           
-        </ul>
-
-        <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
-
-            
-
-            @foreach ($images as $image)
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item {{ $image->tag->slug }}">
-                <article class="portfolio-entry">
-                    <figure class="entry-image">
-                        <img src="{{ $image->image }}" class="img-fluid" alt="" loading="lazy">
-                        <div class="entry-overlay">
-                            <div class="overlay-content">
-                                <div class="entry-meta">{{ $image->tag->name }}</div>
-                                <h3 class="entry-title">{{ $image->name }}</h3>
-                                <div class="entry-links">
-                                    <a href="{{ $image->image }}" class="glightbox"
-                                        data-gallery="portfolio-gallery-marketing"
-                                        data-glightbox="title: Brand Strategy; description: Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.">
-                                        <i class="bi bi-arrows-angle-expand"></i>
-                                    </a>
-                                    <a href="{{ route("image.detail",$image->slug) }}">
-                                        <i class="bi bi-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </figure>
-                </article>
-            </div>
-            @endforeach
-
-        </div><!-- End Portfolio Container -->
-
-    </div>
-
-</div>
-
-</section><!-- /Portfolio Section -->
 
         <!-- Team Section -->
         <section id="team" class="team section light-background">

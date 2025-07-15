@@ -11,7 +11,7 @@
       molestias.</p>
       <nav class="breadcrumbs">
       <ol>
-        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="/">Trang chủ</a></li>
         <li class="current">{{ $image->name }}</li>
       </ol>
       </nav>
