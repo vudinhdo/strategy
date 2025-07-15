@@ -11,6 +11,7 @@ DB_USERNAME=laravel
 DB_PASSWORD=secret
 ```
 3. **vì khi copy không có key sẽ dẫn đến web laravel lỗi => lệnh tạo key**
+
  ```docker-compose exec app php artisan key:generate```
 4. **lệnh chạy bảng CSDL trong docker**
 ```docker-compose exec app php artisan migrate```
